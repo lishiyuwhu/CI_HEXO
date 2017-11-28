@@ -68,6 +68,10 @@ data[3:6][‘ID’]
 
  a.iloc[[0,2],[1,2]] 即可以自由选取行位置，和列位置对应的数据。
 
+ data.iloc[-1]   #选取DataFrame最后一行，返回的是Series
+ data.iloc[-1:]   #选取DataFrame最后一行，返回的是DataFrame
+
+
 4.使用条件来选择
 
  使用单独的列来选择数据
@@ -96,3 +100,12 @@ np.argmax()可以返回数组中最大值的index。
 np.argmax(np.bincount(line))
 ```
 
+## 去重
+
+DataFrame的duplicated方法返回一个布尔型Series,表示各行是否重复行。
+
+而 drop_duplicates方法，它用于返回一个移除了重复行的DataFrame
+
+这两个方法会判断全部列，你也可以指定部分列进行重复项判段。
+例如，希望对名字为k2的列进行去重，
+data.drop_duplicates(['k2'])
