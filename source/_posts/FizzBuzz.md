@@ -16,6 +16,8 @@ http://joelgrus.com/2016/05/23/fizz-buzz-in-tensorflow/,
 
 准备拿tensorlayer也来做一下😀
 
+<!-- more -->
+
 ```python
 #! /usr/bin/python3
 # -*- coding: utf-8 -*-
@@ -165,11 +167,11 @@ Epoch 200 of 200 took 0.007519s
 ```
 
 ```
-Epoch 200 of 200 took 0.014038s
-   train loss: 0.109168
+Epoch 200 of 200 took 0.012757s
+   train loss: 0.123429
    train acc: 0.998884
-   test loss: 0.161590
-   test acc: 0.990099
+   test loss: 0.149421
+   test acc: 1.000000
 ```
 
 ~~看来被刷了是没毛病的😀~~
