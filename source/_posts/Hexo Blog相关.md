@@ -26,7 +26,39 @@ permalink: posts/:category/:year-:month-:day-:title.html
 
 <!-- more -->
 
-## 在github上托管_post, 自动deploy
+## CI时, tag检索问题
+
+默认的node.js版本太低
+
+appveyor.yml修改为
+
+```
+clone_depth: 5
+
+environment:
+  access_token:
+    secure: *******************************************************
+    nodejs_version: "8"
+
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - node --version
+  - npm --version
+  - npm install
+  - npm install hexo-cli -g
+
+build_script:
+  - hexo generate
+
+...
+```
+
+## CI时, npm安装失败
+
+网络抽风, 自求多福. 
+或者npm换个外国的源? 实在抽风严重就换个taobao源先试试
+
+## CI: 在github上托管_post, 自动deploy
 
 
 https://formulahendry.github.io/2016/12/04/hexo-ci/
