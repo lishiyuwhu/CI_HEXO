@@ -17,7 +17,7 @@ read_csv, 返回数据类型 DataFrame
 pd.merge(data_employee_ri,data_employee_ri,on='name')
 ```
 
-
+<!-- more -->
 
 ## 抽取数据
 
