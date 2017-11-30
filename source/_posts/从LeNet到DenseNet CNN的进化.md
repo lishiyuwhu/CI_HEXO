@@ -2,7 +2,7 @@
 title: 从LeNet到DenseNet: CNN的进化之路
 date: 2017/11/30  12:58
 tags: ML
-toc: true
+toc:true
 ---
 
 这篇是大致回顾一下一路走来的这些模型, 以后一些和具体模型联系比较紧密的东西也可以有地方放了.
