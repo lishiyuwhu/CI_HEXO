@@ -5,7 +5,6 @@ tags:
 ---
 
 将40000个文件随机分一部分测试集出去
-
 ```python
 #! /usr/bin/python3
 # -*- coding: utf-8 -*-
@@ -13,12 +12,9 @@ tags:
 # @Author  : Shiyu Li
 # @Software: PyCharm
 
-
 import random
 import os
 import shutil
-
-
 
 def makefile(root, data, typename, NUM):
     '''
@@ -32,12 +28,15 @@ def makefile(root, data, typename, NUM):
     try:
         os.makedirs(root + '/train')
         os.makedirs(root + '/test')
-        os.makedirs(root + '/train/' + typename)
+
     except FileExistsError:
         print('=================================================')
         print("There exist '/train' '/test', delete first please.")
 
-
+    try:
+        os.makedirs(root + '/train/' + typename)
+    except BaseException:
+        print("There exist '/%s', delete first please." % typename)
 
     name_list = os.listdir(data)
     random.shuffle(name_list)
@@ -52,7 +51,6 @@ def makefile(root, data, typename, NUM):
             print('test data :%s' % name)
             shutil.copyfile(os.path.join(data, name), os.path.join(root + '/test', typename + name))
 
-
 if __name__ == '__main__':
     # 将40000个cover和40000个stego中, 各抽出8000作为test, 剩下的作为train data 放在对应文件夹里
 
@@ -60,6 +58,6 @@ if __name__ == '__main__':
     stego_data = '../database/CropedBoossBase/CroppedBossBase-1.0-256x256_stego_SUniward0.4bpp'
     root = '../database/CropedBoossBase'
     makefile(root, cover_data, typename='cover', NUM=32000)
-    makefile(root, stego_data, typename= 'stego', NUM=32000)
+    makefile(root, stego_data, typename='stego', NUM=32000)
 ```
 <!-- more -->
