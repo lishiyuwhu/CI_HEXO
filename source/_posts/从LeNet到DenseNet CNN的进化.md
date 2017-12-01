@@ -1,5 +1,5 @@
 ---
-title: 从LeNet到DenseNet: CNN的进化之路
+title: 从LeNet到DenseNet CNN的进化之路
 date: 2017/11/30  12:58
 tags: ML
 ---
