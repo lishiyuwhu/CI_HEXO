@@ -170,6 +170,7 @@ key: 稀疏连接:
 
 第三种模式会在比较深的地方才采用.
 
+>v3在raw的v2上做了如下变化：RMSProp替代SGD，在类别全连接层后加入 LSR层，将7x7卷积核由三个3x3卷积核替代。
 
 BN方面会放在这里
 https://lishiyuwhu.github.io/2017/11/22/Batch%20normalization/
@@ -180,10 +181,17 @@ LSR:
 
 ## ResNet
 
-
-
 ![](http://otivusbsc.bkt.clouddn.com/75360de3-9e42-4dee-afa4-6f1b3241bae1)
 
+分析:
+
+[[1605.06431] Residual Networks Behave Like Ensembles of Relatively Shallow Networks](https://arxiv.org/abs/1605.06431)
+
+主要思想就是, ResNet其实是一个ensemble系统.
+
+![](http://otivusbsc.bkt.clouddn.com/917e25dc-551a-45f8-a524-296e7a03e8f2)
+
+文章中通过分析梯度, 发现ResNet其实大部分都是中等深度的网络.
 
 
 -------
