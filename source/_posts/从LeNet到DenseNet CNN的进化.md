@@ -18,7 +18,7 @@ LeNet-5的这张图应该算是随处可见了.
 
 可以注意下的几点:
 
-filter的大小是固定5*5, pooling层是2*2的maxpooling, 没有overlap, sigmoid的激活函数
+filter的大小是固定5\*5, pooling层是2\*2的maxpooling, 没有overlap, sigmoid的激活函数
 
 
 <!-- more -->
@@ -40,7 +40,7 @@ AlexNet:
 
 ### Relu
 
-传统的sigmoid和tanh是*饱和*的, 就是输入值达到一定大小之后就变化很小了. 而Relu则是*非饱和*的.
+传统的sigmoid和tanh是*饱和*的, 就是输入值达到一定大小之后就变化很小了. 而Relu则是\*非饱和\*的.
 
 Sigmoid函数在正负饱和区的梯度都接近于0，所以会造成梯度弥散. 
 
@@ -113,7 +113,7 @@ key: 稀疏连接:
 
 4 . 网络越到后面，特征越抽象，而且每个特征所涉及的感受野也更大了，因此随着层数的增加，3x3和5x5卷积的比例也要增加。
 
-实际上卷积的使用就会带来稀疏性. 这里引人注目的是这个3*3 的pooling, 看看resnet, 是不是有几分神似. 这样的一个pooling, 实际上可以看作上层的直接信息输入, 目前来看, 直接引入上层的信息会有相当好的效果. 一定程度上也减少了train过程中梯度消失和爆炸. 和后面具体结构图中看到的前两个softmax一个效果.
+实际上卷积的使用就会带来稀疏性. 这里引人注目的是这个3\*3 的pooling, 看看resnet, 是不是有几分神似. 这样的一个pooling, 实际上可以看作上层的直接信息输入, 目前来看, 直接引入上层的信息会有相当好的效果. 一定程度上也减少了train过程中梯度消失和爆炸. 和后面具体结构图中看到的前两个softmax一个效果.
 
 但是，使用5x5的卷积核仍然会带来巨大的计算量。 为此，文章借鉴'Network in network'，采用1x1卷积核来进行降维。 
 
@@ -135,7 +135,7 @@ key: 稀疏连接:
 
 《Rethinking the Inception Architecture for Computer Vision》, V1的进化版. 
 
-首先*通过实验*给出了一些已经被证明有效的用于放大网络的通用准则和优化方法。这些准则和方法适用但不局限于Inception结构。
+首先\*通过实验\*给出了一些已经被证明有效的用于放大网络的通用准则和优化方法。这些准则和方法适用但不局限于Inception结构。
 
 
 1 . 避免表达瓶颈，特别是在网络靠前的地方。 信息流前向传播过程中显然不能经过高度压缩的层，即表达瓶颈。从input到output，feature map的宽和高基本都会逐渐变小，但是不能一下子就变得很小。比如你上来就来个kernel = 7, stride = 5 ,这样显然不合适。 另外输出的维度channel，一般来说会逐渐增多(每层的num_output)，否则网络会很难训练。（特征维度并不代表信息的多少，只是作为一种估计的手段）
@@ -150,7 +150,7 @@ key: 稀疏连接:
 
 再来说V2在哪里改进了.
 
-首先就死, *用两个连续的3*3卷积层来代替5*5的kernel*. 带来的两个问题: 
+首先就死, \*用两个连续的3\*3卷积层来代替5\*5的kernel\*. 带来的两个问题: 
 
 1 . 这种替代会造成表达能力的下降吗？ 
 后面有大量实验可以表明不会造成表达缺失；
@@ -158,9 +158,9 @@ key: 稀疏连接:
 2 . 3x3卷积之后还要再加激活吗？ 
 作者也做了对比试验，表明添加非线性激活会提高性能。
 
-从这里出发, 3*3还能怎么变得更小呢? 采用1*n卷积核
+从这里出发, 3\*3还能怎么变得更小呢? 采用1\*n卷积核
 
-其次，*引入非对称卷积*。例如，将3x1的卷积和1x3的卷积串联起来，与直接进行3x3卷积的结果是等价的。这种卷积方式大大降低了参数量，从nxn降到了2xn，所以当n越大，降低得越多。实际上，作者发现在网络的前期使用这种分解效果并不好，还有在中度大小的feature map上使用效果才会更好。（对于mxm大小的feature map,建议m在12到20之间）。
+其次，\*引入非对称卷积\*。例如，将3x1的卷积和1x3的卷积串联起来，与直接进行3x3卷积的结果是等价的。这种卷积方式大大降低了参数量，从nxn降到了2xn，所以当n越大，降低得越多。实际上，作者发现在网络的前期使用这种分解效果并不好，还有在中度大小的feature map上使用效果才会更好。（对于mxm大小的feature map,建议m在12到20之间）。
 
 ![](http://otivusbsc.bkt.clouddn.com/621e0ea9-9ca8-4ab9-b6c4-be2f574f0dbb)
 
@@ -192,6 +192,25 @@ LSR:
 ![](http://otivusbsc.bkt.clouddn.com/917e25dc-551a-45f8-a524-296e7a03e8f2)
 
 文章中通过分析梯度, 发现ResNet其实大部分都是中等深度的网络.
+
+
+## DenseNet
+
+[Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993)
+
+具体结构:
+
+![图片描述](http://otivusbsc.bkt.clouddn.com/85ccfebe-195b-423f-92ee-0e8afe3503e1)
+
+![图片描述](http://otivusbsc.bkt.clouddn.com/9816124b-4741-4391-b1e3-3f4b68ebcca5)
+
+>Prior work has shown that there is great redundancy within the feature maps of the individual layers in ResNets. In DenseNets, all layers have direct access to every feature map from all preceding layers, which means that there is no need to re-learn redundant feature maps. Consequently, DenseNet layers are very narrow (on the order of 12 feature maps per layer) and only add a small set of feature maps to the “collective knowledge” of the whole network.
+
+
+其实无论densenet还是resnet, 都是highway net的那个skip connection策略:
+
+>对于某些的输入不加选择的让其进入之后的layer(skip)，从而实现信息流的整合，避免了信息在层间传递的丢失和梯度消失的问题(还抑制了某些噪声的产生).
+
 
 
 -------
