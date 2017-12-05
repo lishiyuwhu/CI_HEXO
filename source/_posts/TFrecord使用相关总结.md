@@ -20,6 +20,8 @@ TFRecords文件包含了tf.train.Example 协议内存块(protocol buffer)(协议
 
 ## 参考文章
 
+http://ycszen.github.io/2016/08/17/TensorFlow%E9%AB%98%E6%95%88%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE/
+
 http://blog.csdn.net/u012759136/article/details/52232266
 
 http://blog.csdn.net/tengxing007/article/details/56847828
