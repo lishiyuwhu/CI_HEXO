@@ -3,10 +3,11 @@
 menu:
   主页: /
   NOTES: /tags/NOTES/
+  ML: /tags/ML/
 
 # SubNav
 subnav:
-  #github: "https://github.com/lishiyuwhu"
+  github: "https://github.com/lishiyuwhu"
   #weibo: "#"
   #rss: "#"
   #zhihu: "#"
