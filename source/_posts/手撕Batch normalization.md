@@ -1,9 +1,18 @@
 ---
-title: Batch normalization
+title: 手撕Batch normalization
 date: 2017-11-22 15:00:09
 tags:
 ---
 
+## 前向传播
+
+![图片描述](http://otivusbsc.bkt.clouddn.com/da60f00a-6508-431d-a79f-f4ba99911851)
+
+## BP
+
+![图片描述](http://otivusbsc.bkt.clouddn.com/d7565b1e-d863-4819-94a0-7308c9583728)
+
+or, [Understanding the backward pass through Batch Normalization Layer](http://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html)
 
 ## train
 
