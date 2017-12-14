@@ -2,7 +2,6 @@
 title: 从LeNet到DenseNet
 date: 2017/11/30  12:58
 tags: ML
-toc:true
 ---
 
 # 网络模型
