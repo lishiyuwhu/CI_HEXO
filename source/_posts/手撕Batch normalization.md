@@ -5,12 +5,10 @@ tags:
 ---
 
 ## 前向传播
-
-![图片描述](http://otivusbsc.bkt.clouddn.com/da60f00a-6508-431d-a79f-f4ba99911851)
+![图片描述](http://otivusbsc.bkt.clouddn.com/0d444530-237d-4f2f-baf6-aeaead7579a5)
 
 ## BP
-
-![图片描述](http://otivusbsc.bkt.clouddn.com/d7565b1e-d863-4819-94a0-7308c9583728)
+![图片描述](http://otivusbsc.bkt.clouddn.com/020035c2-af81-461b-97b7-372f296ce04d)
 
 or, [Understanding the backward pass through Batch Normalization Layer](http://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html)
 
