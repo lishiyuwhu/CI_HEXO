@@ -156,7 +156,7 @@ key: **稀疏连接**:
 >v3在raw的v2上做了如下变化：RMSProp替代SGD，在类别全连接层后加入 LSR层，将7x7卷积核由三个3x3卷积核替代。
 
 BN方面会放在这里
-https://lishiyuwhu.github.io/2017/11/22/Batch%20normalization/
+https://lishiyuwhu.github.io/2017-11/%E6%89%8B%E6%92%95Batch%20normalization/
 
 LSR:label smooth regularization
 
