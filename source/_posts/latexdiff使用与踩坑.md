@@ -24,5 +24,6 @@ latexdiff origin.tex modify.tex > diff.tex
 
 最后compile这个diff.tex, 最后效果就是
 
-![图片描述](http://otivusbsc.bkt.clouddn.com/fe28b16a-a7fd-4aeb-a091-b9b5ca3ebe4a)
+![](http://otivusbsc.bkt.clouddn.com/fe28b16a-a7fd-4aeb-a091-b9b5ca3ebe4a)
+
 
