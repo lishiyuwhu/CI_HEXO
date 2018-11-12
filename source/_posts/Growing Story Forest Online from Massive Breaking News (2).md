@@ -1,14 +1,26 @@
 ---
 title: Growing Story Forest Online from Massive Breaking News
-date: 2018/6/20 16:37
+date: 2018-11-12 9:30:20
 tags: 
 ---
+
+上学期做的一个作业
+
+
+<!-- more -->
+
+# PPT
+
+![](https://markdown-1257721827.cos.ap-shanghai.myqcloud.com/幻灯片1.JPG)
+
+![](https://markdown-1257721827.cos.ap-shanghai.myqcloud.com/幻灯片2.JPG)
+
+
+
 
 # Growing Story Forest Online from Massive Breaking News
 
 针对海量的、连续的新闻文本数据，进行话题检测与跟踪(TDT), 目标: online且迅速准确的在长时间流内抽取出独立的event与topic
-
-<!-- more -->
 
 现有方法: Event timelines, event threads, event evolution graphs, information maps. 这些方法在应用到海量数据时会有如下问题:
  - 难以以一个合适的粒度来抽取独立的事件
@@ -45,20 +57,20 @@ tags:
  - 共现次数>3
  - 出现的条件概率$Pr(\omega _i|\omega _j)>0.15$, $Pr(\omega _j|\omega _i)>0.15$
 
-
+===
 
 其次,采用社区发现(community detection)将网络中联系紧密的部分找出来, 将大的关键词图划分为一个个的关键词community, 生成规模较小的子图.
 
 > 社区发现（Community Detection）算法用来发现复杂网络中的社区结构，也可以看做是一种聚类算法.社区内部联系稠密，而社区之间联系稀疏. 对每一条边采用介中性打分(betweenness centrality score).
 
-
+====
 
 输入: keyword community
 目标: 将doc聚类为topic
 
 计算每一个doc和keyword community之间的余弦相似度. doc特征使用TF-IDF, 而keyword community将其看作一个doc也使用TF-IDF. 把doc归为余弦相似度最高的keyword community内, 以此将doc按关键词聚类为topic.
 
-
+====
 
 ## event抽取
 
