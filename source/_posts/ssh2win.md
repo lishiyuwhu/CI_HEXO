@@ -30,18 +30,32 @@ Free版是只支持单人连接,凑合用吧
 我之前实习的时候, 开发机要走堡垒机所以sftp不能用, 就一直在用Jupyter lab. 局域网内直接开就好了, 其他的还要点操作
 
 1. 配置好powershell server, 确保能ssh过去
-2. `jupyter notebook password`  设置jupyter lab密码本地浏览器过remote session要密码
-3. server上把jupyter lab开起来`jupyter lab --port=9000 --no-browser &  `
+2. `jupyter notebook password`  设置jupyter lab密码. 本地浏览器过remote session要密码
+3. server上把jupyter lab开起来`jupyter lab --port=9000 --no-browser`
 4. ssh 过去, 把远程端口映射为localhost的端口 `ssh -N -f -L 8888:localhost:9000 1.1.1.1 -p 22`
-5. 网页 localhost.com:8888
+5. 网页打开 localhost.com:8888
+
+
+http://www.blopig.com/blog/2018/03/running-jupyter-notebook-on-a-remote-server-via-ssh/
+
 
 # 4. Pycharm的remote ssh解释器
 
 之前搞过, 但没有terminal真挺麻烦, 还要单独开个
 
+==================================
+
+# 5. win10自带的openssh
+
+https://null-byte.wonderhowto.com/how-to/create-native-ssh-server-your-windows-10-system-0181871/
+
+按照这个配置, "Step 4 Install the OpenSSHUtils Helper Module"跳过, 遇见服务开不了的问题就手工去服务里面打开
+注意 sshd和ssh-keygen这两个服务名字变了, 现在是以OpenSSH开头的两个服务.
+
+配置完, 走账号密码登录就行, 然后进powershell.
+
+要开jupyter后, 继续端口映射完了就ok
+
+`ssh -N -f -L 8888:localhost:9000 username@server_ip -p 22`
 
 
-
-
-
-http://www.blopig.com/blog/2018/03/running-jupyter-notebook-on-a-remote-server-via-ssh/
