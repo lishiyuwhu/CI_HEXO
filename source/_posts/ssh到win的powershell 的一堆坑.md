@@ -27,3 +27,10 @@ conda 号称4.6版本修正了这个问题, 使用`conda install -c conda-canary
 
 先在cmd里面 `activate`之后再进powershell
 
+
+
+2. curses 错误
+
+老问题了, win不支持自带的curses.
+手工装whl
+`https://www.lfd.uci.edu/~gohlke/pythonlibs/#curses`
