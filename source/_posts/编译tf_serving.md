@@ -77,8 +77,9 @@ FAILED: Build did NOT complete successfully
 
 ```
 
-第一次编译时加了local_resources,  编译了6个小时然后最后报错了. 查询知道可能是资源不足,   去掉```--local_resources``` 相关选项.
-同时安装了一下tensoflow(1.14)  
+第一次编译时加了local_resources,  编译了6个小时然后最后报错了. 查询知道可能是资源不足,去掉
+```--local_resources``` 
+相关选项.同时安装了一下tensoflow(1.14)  
 
 之后重新开始编译, 第二次就很快了
 
@@ -108,6 +109,7 @@ client端要先装tfserving
 pip install tensorflow-serving-api
 python tensorflow_serving/example/mnist_client.py --num_tests=1000 --server=127.0.0.1:8042
 ```
+
 运行之后, 说明编译成功
 
 ``` 
@@ -115,5 +117,3 @@ python tensorflow_serving/example/mnist_client.py --num_tests=1000 --server=127.
 ```
 
 
-
-tensorflow_model_server_tf11 --port=8042 --model_name=bert --model_base_path=/data2/shanqi/Pycharm_sync/NLP/BERT-chinese-text-classification-and-deployment/data_mini/pb
